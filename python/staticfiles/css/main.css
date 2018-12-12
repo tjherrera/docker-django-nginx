@@ -1,0 +1,35 @@
+#navbarMenu .nav-item:hover, #navbarMenu .nav-item.dropdown .dropdown-item:hover {
+    background-color: #e9ecef;
+}
+
+#navbarMenu .nav-item .nav-link.active {
+    font-weight: bold;
+}
+
+/* Breadcrumbs */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\003e";
+}
+
+#navbarBreadcrumb .breadcrumb-item a {
+    color: #17a2b8; /* var(--info) */
+    color: var(--info);
+}
+
+#navbarBreadcrumb .breadcrumb-item {
+    color: #6c757d; /* var(--gray) */
+}
+
+#navbarBreadcrumb .breadcrumb-item.active {
+    color: #f8f9fa; /* var (--light) */
+}
+
+/* Main content */
+#mainContent {
+    margin-bottom: 3rem;
+}
+
+/* Utilities */
+.box-shadow-focus-0:focus {
+    box-shadow: none;
+}

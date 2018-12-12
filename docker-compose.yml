@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  django_project:
+    build: .
+    volumes:
+      - ./python:/opt/django_project
+    networks:
+      - web_network
+    ports:
+      - 8000:8000
+
+  nginx:
+    image: nginx:1.15
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./python/staticfiles:/opt/django_project/staticfiles
+    networks:
+      - web_network
+    depends_on:
+      - django_project
+
+networks:
+  web_network:
